@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><title>TERCOM MVP report</title>
+<style>body{font-family:Arial,sans-serif;margin:24px} table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:6px} img{max-width:100%;border:1px solid #ddd}</style></head><body>
+<h1>TERCOM + MHT Kalman MVP report</h1>
+<h2>Summary</h2>
+<table>
+<tr><th>samples</th><td>3005</td></tr>
+<tr><th>locked samples</th><td>2805</td></tr>
+<tr><th>final x,y</th><td>822.01, 316.32</td></tr>
+<tr><th>final speed px/s</th><td>1.303</td></tr>
+<tr><th>final azimuth deg</th><td>93.1</td></tr>
+<tr><th>avg confidence</th><td>0.675</td></tr>
+<tr><th>mean error px debug</th><td>0.918</td></tr>
+<tr><th>final error px debug</th><td>0.315</td></tr>
+</table>
+<h2>Trajectory</h2><img src="trajectory_on_dem.png">
+<h2>Error</h2><img src="error_vs_time.png">
+<h2>Correlation heatmap</h2><img src="correlation_heatmap_az_speed.png">
+<h2>Notes</h2>
+<ul><li>GPS is used only as last known start point; after that nav status is TERCOM/Kalman or dead-reckoning.</li>
+<li>Azimuth step is configurable. For requirement demo use <code>--bootstrap-az-step-deg 1 --heatmap-az-step-deg 1</code>.</li>
+<li>Onboard trade-off: larger azimuth/speed steps are faster; 1° mode is available for accuracy/demo.</li></ul>
+</body></html>
